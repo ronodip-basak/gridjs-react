@@ -13,7 +13,8 @@ export class ReactWrapper extends gComponent<{
   ref = gCreateRef();
 
   componentDidMount() {
-    ReactDOM.render(this.props.element, this.ref.current);
+    const root = createRoot(this.ref.current);
+    root.render(this.props.element);
   }
 
   render() {
